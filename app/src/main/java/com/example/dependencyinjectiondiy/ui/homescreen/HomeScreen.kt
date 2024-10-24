@@ -17,15 +17,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import com.example.dependencyinjectiondiy.data.repository.ItemRepositoryImpl
 import com.example.dependencyinjectiondiy.domain.entities.Item
 import com.example.dependencyinjectiondiy.navigation.LocalNavController
 import com.example.dependencyinjectiondiy.navigation.NavRoutes
 import com.example.dependencyinjectiondiy.ui.theme.DependencyInjectionDiyTheme
-import kotlinx.coroutines.flow.StateFlow
-
 
 @Composable
 fun HomeScreen(
@@ -40,8 +36,8 @@ fun HomeScreen(
 //    val homeScreenUiState by homeScreenViewModel.state.collectAsStateWithLifecycle()
     HomeContent(
         itemsList = state.items,
-        loadItems = {homeScreenViewModel.laodItems()},
-        navigateToDetailsScreen = {navController.navigate(NavRoutes.DetailsScreen)}
+        loadItems = { homeScreenViewModel.laodItems() },
+        navigateToDetailsScreen = { navController.navigate(NavRoutes.DetailsScreen) }
     )
 }
 
@@ -51,11 +47,10 @@ fun HomeContent(
     loadItems: () -> Unit,
     navigateToDetailsScreen: () -> Unit
 ) {
-
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = navigateToDetailsScreen,
+                onClick = navigateToDetailsScreen
             ) {
                 Text(text = "FAB")
             }
@@ -70,7 +65,7 @@ fun HomeContent(
         ) {
             item {
                 Text(
-                    text = "Hello YYYYYYYY!",
+                    text = "Hello YYYYYYYY!"
                 )
             }
             itemsIndexed(itemsList) { index, item ->

@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.asStateFlow
 
 class HomeScreenViewModel(
     private val itemRepository: ItemRepositoryImpl
-) : ViewModel(){
+) : ViewModel() {
     data class HomeScreenState(
         val items: List<Item> = listOf(Item(id = 555, name = "init"))
     )

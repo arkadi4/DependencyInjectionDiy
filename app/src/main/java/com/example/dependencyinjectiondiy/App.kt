@@ -4,10 +4,7 @@ import android.app.Application
 import androidx.room.Room
 import com.example.dependencyinjectiondiy.data.local.AppDatabase
 
-//import androidx.room.Room
-//import com.example.dependencyinjectiondiy.data.local.AppDatabase
-
-class MyApp : Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -17,5 +14,4 @@ class MyApp : Application() {
             "my_database"
         ).build()
     }
-
 }

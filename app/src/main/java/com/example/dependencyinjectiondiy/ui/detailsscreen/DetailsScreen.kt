@@ -17,11 +17,11 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
 fun DetailsContent(
     id: Long
 ) {
-   Column(
-       verticalArrangement = Arrangement.Center,
-       horizontalAlignment = Alignment.CenterHorizontally,
-       modifier = Modifier.fillMaxSize()
-   ) {
-       Text(text = "id: $id")
-   }
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Text(text = "id: $id")
+    }
 }
